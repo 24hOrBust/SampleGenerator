@@ -34,6 +34,6 @@ for lat in range(start_lat, end_lat, int(meter_step * deg_per_m)):
             "lng" : lng / 1000000
         }
         d['classification'] = 'Unknown'
-        d['sample'] = 'True'
+        d['sample'] = 1
             
         client.fuel_scan.messurements.insert_one(d)
