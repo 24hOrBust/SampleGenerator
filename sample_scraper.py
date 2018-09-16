@@ -10,7 +10,7 @@ end_lat = int(39.391414 * 1000000)
 end_long = int(-123.658898 * 1000000)
 
 deg_per_m = 0.000009 * 1000000
-meter_step = 10
+meter_step = 20
 
 # forest_y1a = 42.948426
 # forest_x1a = -73.618232
@@ -34,5 +34,6 @@ for lat in range(start_lat, end_lat, int(meter_step * deg_per_m)):
             "lng" : lng / 1000000
         }
         d['classification'] = 'Unknown'
+        d['sample'] = 'True'
             
         client.fuel_scan.messurements.insert_one(d)
